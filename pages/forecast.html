@@ -1,1 +1,16 @@
-FORECAST for {{city}}
+<div ng-repeat="w in weatherResult.list">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        {{w.dt}}
+                    </h3>
+                    <div class="panel-body">
+                        Temperature: {{convertToCelcius(w.temp.day)}} degree Celcius
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
