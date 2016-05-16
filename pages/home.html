@@ -2,7 +2,9 @@
     <div class="col-md-6 col-md-offset-3">
         <h4>ForeCast By City</h4>
         <div class="form-group">
-            <input type="text" class="form-control" ng-model="city"/>
+            <input type="text" class="form-control" ng-model="city" placeholder="Type in city name..."/>
+            <br>
+            <input type="number" class="form-control" ng-model="days" min="2" max="10" placeholder="Select no of days"/>
         </div>
         <a href="#forecast" class="btn btn-primary">Get Forecast</a>
     </div>

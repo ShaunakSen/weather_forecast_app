@@ -1,16 +1,46 @@
+<h2>Showing Forecasts for {{city}} for {{days}}</h2>
+
 <div ng-repeat="w in weatherResult.list">
     <div class="row">
-        <div class="col-md-12">
-            <div class="panel panel-default">
+        <div class="col-md-3">
+            <weather-report weather-day="w" convert-to-standard="convertToCelcius(daytimeTemp)" convert-to-date="convertToDate(dt)" date-format="MMM d, y"></weather-report>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-warning">
                 <div class="panel-heading">
                     <h3 class="panel-title">
-                        {{w.dt}}
+                        {{convertToDate(w.dt) | date: 'MMM d, y'}}
                     </h3>
                     <div class="panel-body">
-                        Temperature: {{convertToCelcius(w.temp.day)}} degree Celcius
+                        Maximum Temperature: {{convertToCelcius(w.temp.max)}} degree Celcius
                     </div>
                 </div>
             </div>
         </div>
+        <div class="col-md-3">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        {{convertToDate(w.dt) | date: 'MMM d, y'}}
+                    </h3>
+                    <div class="panel-body">
+                        Minimum Temperature: {{convertToCelcius(w.temp.min)}} degree Celcius
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        {{convertToDate(w.dt) | date: 'MMM d, y'}}
+                    </h3>
+                    <div class="panel-body">
+                        Temperature for night: {{convertToCelcius(w.temp.night)}} degree Celcius
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
